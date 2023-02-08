@@ -1,0 +1,104 @@
+package com.model;
+import java.util.Date;
+
+public class Tasks {
+
+    private int id;
+    Private String name;
+    private String description;
+    private boolean isDone;
+    private String observation;
+    private Date createdAt;
+    private Date updatedAt;
+    private Date endLine;
+    private int idProject;
+
+
+    public project(id int; String name; String description; boolean isDone; String observation; Date createdAt; Date updatedAt; Date endLine; int idProject){
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.isDone = isDone;
+        this.observation = observation;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.endLine = deadLine;
+        this.idProject = idProject;
+    }
+
+    public void id{
+        this.id = id;
+    }
+
+    public int id{
+        return id;
+    }
+
+    public void name{
+        this.name = name;
+    }
+
+    public String name{
+        return name;
+    }
+
+    public void description{
+        this.description = description;
+    }
+
+    public String description{
+        return description;
+    }
+
+    public void isDone{
+        this.isDone = isDone;
+    }
+
+    public boolean isDone{
+        return isDone;
+    }
+
+    public void observation{
+        this.observation = observation;
+    }
+
+    public String observation{
+        return observation;
+    }
+
+    public void createdAt{
+        this.createdAt = createdAt;
+    }
+
+    public Date createdAt{
+        return createdAt;
+    }
+
+    public void updatedAt{
+        this.updatedAt = updatedAt;
+    }
+
+    public Date updatedAt{
+        return updatedAt;
+    }
+
+    public void deadLine{
+        this.deadLine = deadLine;
+    }
+
+    public Date deadLine{
+        return deadLine;
+    }
+
+    public void idProject{
+        this.idProject = idProject;
+    }
+
+    public int idProject{
+        return idProject;
+    }
+
+    public String toString(){
+        return "Project{" + "id=" + id + ", name=" + name + ", description=" + description + ", observation=" + observation + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + ", deadLine=" + deadLine + ", idProject" + idProject + "}";   
+    }
+}

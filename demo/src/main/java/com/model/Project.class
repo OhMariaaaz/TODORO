@@ -1,0 +1,63 @@
+package com.model;
+import java.util.Date;
+
+public class Project {
+
+    private int id;
+    Private String name;
+    private String description;
+    private Date createdAt;
+    private Date updatedAt;
+
+    public project(id int; String name; String description; Date createdAt; Date updatedAt){
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
+
+    public void id{
+        this.id = id;
+    }
+
+    public int id{
+        return id;
+    }
+
+    public void name{
+        this.name = name;
+    }
+
+    public String name{
+        return name;
+    }
+
+    public void description{
+        this.description = description;
+    }
+
+    public String description{
+        return description;
+    }
+
+    public void createdAt{
+        this.createdAt = createdAt;
+    }
+
+    public Date createdAt{
+        return createdAt;
+    }
+
+    public void updatedAt{
+        this.updatedAt = updatedAt;
+    }
+
+    public Date updatedAt{
+        return updatedAt;
+    }
+
+    public String toString(){
+        return "Project{" + "id=" + id + ", name=" + name + ", description=" + description + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + "}";   
+    }
+}
