@@ -14,7 +14,7 @@ public class Tasks {
     private int idProject;
 
 
-    public project(id int; String name; String description; boolean isDone; String observation; Date createdAt; Date updatedAt; Date endLine; int idProject){
+    public Task(id int; String name; String description; boolean isDone; String observation; Date createdAt; Date updatedAt; Date endLine; int idProject){
         this.id = id;
         this.name = name;
         this.description = description;
@@ -26,75 +26,79 @@ public class Tasks {
         this.idProject = idProject;
     }
 
-    public void id{
+    public Task(){
+        this.createdAt = new Date();
+    }
+
+    public void setId{
         this.id = id;
     }
 
-    public int id{
+    public int getId{
         return id;
     }
 
-    public void name{
+    public void setName{
         this.name = name;
     }
 
-    public String name{
+    public String getName{
         return name;
     }
 
-    public void description{
+    public void setDescription{
         this.description = description;
     }
 
-    public String description{
+    public String getDescription{
         return description;
     }
 
-    public void isDone{
+    public void setIsDone{
         this.isDone = isDone;
     }
 
-    public boolean isDone{
+    public boolean getIsDone{
         return isDone;
     }
 
-    public void observation{
+    public void setObservation{
         this.observation = observation;
     }
 
-    public String observation{
+    public String getObservation{
         return observation;
     }
 
-    public void createdAt{
+    public void setCreatedAt{
         this.createdAt = createdAt;
     }
 
-    public Date createdAt{
+    public Date getCreatedAt{
         return createdAt;
     }
 
-    public void updatedAt{
+    public void setUpdatedAt{
         this.updatedAt = updatedAt;
     }
 
-    public Date updatedAt{
+    public Date getUpdatedAt{
         return updatedAt;
     }
 
-    public void deadLine{
+    public void setDeadLine{
         this.deadLine = deadLine;
     }
 
-    public Date deadLine{
+    public Date getDeadLine{
         return deadLine;
     }
 
-    public void idProject{
+    public void setIdProject{
         this.idProject = idProject;
     }
 
-    public int idProject{
+    public int getIdProject{
         return idProject;
     }
 
