@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="8.45.1">
-<file name="/home/eduarda/Documentos/GitHub/TODORO/demo/src/main/java/com/todoro/App.java">
-<error line="5" column="1" severity="error" message="Ordem errada para a importação &apos;com.util.ConnectionFactory&apos;." source="com.puppycrawl.tools.checkstyle.checks.imports.ImportOrderCheck"/>
-<error line="5" column="1" severity="error" message="Separação extra no grupo de importações anterior a &apos;com.util.ConnectionFactory&apos;" source="com.puppycrawl.tools.checkstyle.checks.imports.ImportOrderCheck"/>
+<file name="/home/eduarda/Documentos/GitHub/TODORO/demo/src/main/java/com/todoro/Main.java">
+<error line="4" column="8" severity="error" message="Importação não utilizada - java.sql.DriverManager." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="5" column="1" severity="error" message="Ordem errada para a importação &apos;com.util.*&apos;." source="com.puppycrawl.tools.checkstyle.checks.imports.ImportOrderCheck"/>
+<error line="5" column="16" severity="error" message="A forma de importação &apos;.*&apos; deveria ser evitada - com.util.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="8" column="1" severity="error" message="&apos;CLASS_DEF&apos; é precedido por mais do que 1 linha vazia." source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
+<error line="8" column="1" severity="error" message="Classes utilitárias não deveriam ter construtores públicos ou com visibilidade de pacote." source="com.puppycrawl.tools.checkstyle.checks.design.HideUtilityClassConstructorCheck"/>
+<error line="8" column="1" severity="error" message="Falta o comentário Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocTypeCheck"/>
+<error line="9" column="5" severity="error" message="Falta o comentário Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
 </file>
 <file name="/home/eduarda/Documentos/GitHub/TODORO/demo/src/main/java/com/util/ConnectionFactory.java">
 <error line="6" column="1" severity="error" message="Classes utilitárias não deveriam ter construtores públicos ou com visibilidade de pacote." source="com.puppycrawl.tools.checkstyle.checks.design.HideUtilityClassConstructorCheck"/>

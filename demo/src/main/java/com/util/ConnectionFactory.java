@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 public class ConnectionFactory {
     
     public static final String DRIVER = "com.mysql.jdbc.Driver";
-    public static final String URL = "jdbc:mysql://localhost:3306/TODORO";
+    public static final String URL = "jdbc:mysql://localhost:3306/TODORO?enabledTLSProtocols=TLSv1.2&useSSL=false";
     public static final String USER = "root";
     public static final String PASS = "password";
 

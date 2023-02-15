@@ -5,15 +5,29 @@ import model.Task;
 public class TaskController {
 
     public void save(Task task) {
-
+        String sql = "";
     }
 
     public void update(Task task) {
-
+        String sql = "UPDATE FROM Tasks WHERE id = ?";
     }
 
     public void deleteById(int taskId) {
         String sql = "DELETE FROM Tasks WHERE id = ?";
+
+        Connection conn = null;
+        PreparedStatement statement = null;
+
+        try {
+            conn = ConnectionFactory.getConnection();
+            statement = conn.prepareStatement(sql);
+            statement.setInt(1, taskId);
+            statement.execute();
+        } catch (SQLException e) {
+            throw new SQLException("Erro ao deletar a tarefa.");
+        }finally{
+            ConnectionFactory.closeConnection(conn);
+        }
     }
 
     public List<Task> getAll(int idProject) {
