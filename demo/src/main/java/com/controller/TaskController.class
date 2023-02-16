@@ -24,7 +24,6 @@ public class TaskController {
 
         Connection conn = null;
         PreparedStatement statement = null;
-
         try {
             conn = ConnectionFactory.getConnection();
             statement = conn.prepareStatement(sql);
@@ -45,12 +44,41 @@ public class TaskController {
     }
 
     public void update(Task task) {
-        String sql = "UPDATE FROM Tasks WHERE id = ?";
+        String sql = "UPDATE Tasks SET "
+         + "idProject = ?"
+        + ", name = ?"
+        + ", description = ?"
+        + ", isDone = ?"
+        + ", observationv = ?"
+        + ", createdAt = ?"
+        + ", updatedAt = ?"
+        + ", deadLine = ?"
+        + " WHERE id = ?";
+
+        Connection conn = null;
+        PreparedStatement statement = null;
+        try {
+            conn = ConnectionFactory.getConnection();
+            statement = conn.prepareStatement(sql);
+            statement.setInt(1, task.getIdProject);
+            statement.setString(2, task.getName);
+            statement.setString(3, task.getDescription);
+            statement.setBoolean(4, task.getIsDone);
+            statement.setString(5, task.getObservation);
+            statement.setDate(6, new Date(task.getCreatedAt().getTime()));
+            statement.setDate(7, new Date(task.getUpdatedAt().getTime()));
+            statement.setDate(8, new Date(task.getDeadLine().getTime()));
+            statement.setInt(9, task.getId);
+            statement.execute();
+        } catch (Exception ex) {
+            throw new RuntimeException("Erro ao alterar a tarefa." + ex.getMessage(), ex);
+        }finally{
+            ConnectionFactory.closeConnection(conn, statement);
+        }
     }
 
     public void deleteById(int taskId) {
         String sql = "DELETE FROM Tasks WHERE id = ?";
-
         Connection conn = null;
         PreparedStatement statement = null;
 
@@ -67,6 +95,37 @@ public class TaskController {
     }
 
     public List<Task> getAll(int idProject) {
+        String sql = "SELECT * FROM Tasks WHERE idProject = ?";
+        Connection conn = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        List<Task> tasks = new ArrayList<Task>();
+        try {
+            conn = ConnectionFactory.getConnection();
+            statement = conn.prepareStatement(sql);
+            statement.setInt(1, idProject);
+            resultSet = statement.executeQuery();
 
+            while(resultSet.next()){
+                Task task = new Task();
+                task.setId(resultSet.getInt("id"));
+                task.setIdProject(resultSet.getInt("idProject"));
+                task.setName(resultSet.getString("name"));
+                task.setDescription(resultSet.getString("description"));
+                task.setIsDone(resultSet.getBoolean("isDone"));
+                task.setObservation(resultSet.getString("observationv"));
+                task.setDeadLine(resultSet.getDate("deadLine"));
+                task.setCreatedAt(resultSet.getDate("createdAt"));
+                task.setUpdatedAt(resultSet.getDate("updatedAt"));
+                tasks.add(task);
+            }
+
+        } catch (Exception ex) {
+            throw new RuntimeException("Erro ao buscar a tarefa." + ex.getMessage(), ex);
+        }finally{
+            ConnectionFactory.closeConnection(conn, statement, resultSet);
+        }
+
+        return tasks
     }
 }
