@@ -2,11 +2,13 @@ package com.controller;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import util.ConnectionFactory;
+import java.sql.ResultSet;
+import com.util.ConnectionFactory;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.sql.Date;
-import model.Project;
+import com.model.Project;
 
 public class ProjectController {
 
@@ -24,12 +26,12 @@ public class ProjectController {
             conn = ConnectionFactory.getConnection();
             statement = conn.prepareStatement(sql);
 
-            statement.setString(1, project.getName);
-            statement.setString(2, project.getDescription);
+            statement.setString(1, project.getName());
+            statement.setString(2, project.getDescription());
             statement.setDate(3, new Date(project.getCreatedAt().getTime()));
             statement.setDate(4, new Date(project.getUpdatedAt().getTime()));
             statement.execute();
-        } catch (Exception e) {
+        } catch (Exception ex) {
             throw new RuntimeException("Erro ao criar o projeto." + ex.getMessage(), ex);
         }finally{
             ConnectionFactory.closeConnection(conn, statement);
@@ -49,11 +51,11 @@ public class ProjectController {
         try {
             conn = ConnectionFactory.getConnection();
             statement = conn.prepareStatement(sql);
-            statement.setString(1, project.getName);
-            statement.setString(2, project.getDescription);
+            statement.setString(1, project.getName());
+            statement.setString(2, project.getDescription());
             statement.setDate(3, new Date(project.getCreatedAt().getTime()));
             statement.setDate(4, new Date(project.getUpdatedAt().getTime()));
-            statement.setInt(5, project.getId);
+            statement.setInt(5, project.getId());
             statement.execute();
         } catch (Exception ex) {
             throw new RuntimeException("Erro ao alterar o projeto." + ex.getMessage(), ex);
@@ -84,7 +86,7 @@ public class ProjectController {
         Connection conn = null;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
-        List<Project> projects = new ArrayList<project>();
+        List<Project> projects = new ArrayList<Project>();
         try {
             conn = ConnectionFactory.getConnection();
             statement = conn.prepareStatement(sql);
@@ -107,6 +109,6 @@ public class ProjectController {
             ConnectionFactory.closeConnection(conn, statement, resultSet);
         }
 
-        return projects
+        return projects;
     }
 }

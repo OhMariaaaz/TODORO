@@ -1,16 +1,21 @@
 package com.todoro;
 
-import java.sql.Connection;
-import com.util.*;
+import com.controller.*;
+import com.model.*;
+//import com.util.*;
 
 
 public class Main {
+    
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        
+        ProjectController projectController = new ProjectController();
+        Project project = new Project();
 
-        Connection c = ConnectionFactory.getConnection();
+        project.setName("First Project");
+        project.setDescription("Testing controllers, methods and database");
+        System.out.println(project.toString());
+        projectController.save(project);
 
-        ConnectionFactory.closeConnection(c);
-        System.out.println("End!");
     }        
 }

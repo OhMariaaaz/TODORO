@@ -4,12 +4,17 @@ import java.util.Date;
 public class Project {
 
     private int id;
-    Private String name;
+    private String name;
     private String description;
     private Date createdAt;
     private Date updatedAt;
 
-    public project(id int; String name; String description; Date createdAt; Date updatedAt){
+    public Project(){
+        this.createdAt = new Date();
+        this.updatedAt = new Date();
+    }
+
+    public Project(int id, String name, String description, Date createdAt, Date updatedAt){
         this.id = id;
         this.name = name;
         this.description = description;
@@ -17,43 +22,43 @@ public class Project {
         this.updatedAt = updatedAt;
     }
 
-    public void id{
+    public void setId(int id){
         this.id = id;
     }
 
-    public int id{
+    public int getId(){
         return id;
     }
 
-    public void name{
+    public void setName(String name){
         this.name = name;
     }
 
-    public String name{
+    public String getName(){
         return name;
     }
 
-    public void description{
+    public void setDescription(String description){
         this.description = description;
     }
 
-    public String description{
+    public String getDescription(){
         return description;
     }
 
-    public void createdAt{
+    public void setCreatedAt(Date createdAt){
         this.createdAt = createdAt;
     }
 
-    public Date createdAt{
+    public Date getCreatedAt(){
         return createdAt;
     }
 
-    public void updatedAt{
+    public void setUpdatedAt(Date updatedAt){
         this.updatedAt = updatedAt;
     }
 
-    public Date updatedAt{
+    public Date getUpdatedAt(){
         return updatedAt;
     }
 

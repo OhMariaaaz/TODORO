@@ -1,20 +1,20 @@
 package com.model;
 import java.util.Date;
 
-public class Tasks {
+public class Task {
 
     private int id;
-    Private String name;
+    private String name;
     private String description;
     private boolean isDone;
     private String observation;
     private Date createdAt;
     private Date updatedAt;
-    private Date endLine;
+    private Date deadLine;
     private int idProject;
 
 
-    public Task(id int; String name; String description; boolean isDone; String observation; Date createdAt; Date updatedAt; Date endLine; int idProject){
+    public Task(int id, String name, String description, boolean isDone, String observation, Date createdAt, Date updatedAt, Date deadLine, int idProject){
         this.id = id;
         this.name = name;
         this.description = description;
@@ -22,83 +22,84 @@ public class Tasks {
         this.observation = observation;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
-        this.endLine = deadLine;
+        this.deadLine = deadLine;
         this.idProject = idProject;
     }
 
     public Task(){
         this.createdAt = new Date();
+        this.updatedAt = new Date();
     }
 
-    public void setId{
+    public void setId(int id){
         this.id = id;
     }
 
-    public int getId{
+    public int getId(){
         return id;
     }
 
-    public void setName{
+    public void setName(String name){
         this.name = name;
     }
 
-    public String getName{
+    public String getName(){
         return name;
     }
 
-    public void setDescription{
+    public void setDescription(String description){
         this.description = description;
     }
 
-    public String getDescription{
+    public String getDescription(){
         return description;
     }
 
-    public void setIsDone{
+    public void setIsDone(Boolean isDone){
         this.isDone = isDone;
     }
 
-    public boolean getIsDone{
+    public boolean getIsDone(){
         return isDone;
     }
 
-    public void setObservation{
+    public void setObservation(String observation){
         this.observation = observation;
     }
 
-    public String getObservation{
+    public String getObservation(){
         return observation;
     }
 
-    public void setCreatedAt{
+    public void setCreatedAt(Date createdAt){
         this.createdAt = createdAt;
     }
 
-    public Date getCreatedAt{
+    public Date getCreatedAt(){
         return createdAt;
     }
 
-    public void setUpdatedAt{
+    public void setUpdatedAt(Date updatedAt){
         this.updatedAt = updatedAt;
     }
 
-    public Date getUpdatedAt{
+    public Date getUpdatedAt(){
         return updatedAt;
     }
 
-    public void setDeadLine{
+    public void setDeadLine(Date deadLine){
         this.deadLine = deadLine;
     }
 
-    public Date getDeadLine{
+    public Date getDeadLine(){
         return deadLine;
     }
 
-    public void setIdProject{
+    public void setIdProject(int idProject){
         this.idProject = idProject;
     }
 
-    public int getIdProject{
+    public int getIdProject(){
         return idProject;
     }
 
