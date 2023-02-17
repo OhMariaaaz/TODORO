@@ -13,10 +13,10 @@ public class TaskController {
     public void save(Task task) {
         String sql = "INSERT INTO  Tasks ("
         + "idProject"
-        + ", name"
-        + ", description"
+        + ", namev"
+        + ", descriptionv"
         + ", isDone"
-        + ", observationv"
+        + ", observation"
         + ", createdAt"
         + ", updatedAt"
         + ", deadLine"
@@ -46,10 +46,10 @@ public class TaskController {
     public void update(Task task) {
         String sql = "UPDATE Tasks SET "
          + "idProject = ?"
-        + ", name = ?"
-        + ", description = ?"
+        + ", namev = ?"
+        + ", descriptionv = ?"
         + ", isDone = ?"
-        + ", observationv = ?"
+        + ", observation = ?"
         + ", createdAt = ?"
         + ", updatedAt = ?"
         + ", deadLine = ?"
@@ -110,10 +110,10 @@ public class TaskController {
                 Task task = new Task();
                 task.setId(resultSet.getInt("id"));
                 task.setIdProject(resultSet.getInt("idProject"));
-                task.setName(resultSet.getString("name"));
-                task.setDescription(resultSet.getString("description"));
+                task.setName(resultSet.getString("namev"));
+                task.setDescription(resultSet.getString("descriptionv"));
                 task.setIsDone(resultSet.getBoolean("isDone"));
-                task.setObservation(resultSet.getString("observationv"));
+                task.setObservation(resultSet.getString("observation"));
                 task.setDeadLine(resultSet.getDate("deadLine"));
                 task.setCreatedAt(resultSet.getDate("createdAt"));
                 task.setUpdatedAt(resultSet.getDate("updatedAt"));
