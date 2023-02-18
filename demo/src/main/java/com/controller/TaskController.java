@@ -2,11 +2,12 @@ package com.controller;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import util.ConnectionFactory;
+import java.sql.ResultSet;
+import com.util.ConnectionFactory;
+import java.util.ArrayList;
 import java.util.List;
 import java.sql.Date;
-import model.Task;
+import com.model.Task;
 
 public class TaskController {
 
@@ -27,16 +28,16 @@ public class TaskController {
         try {
             conn = ConnectionFactory.getConnection();
             statement = conn.prepareStatement(sql);
-            statement.setInt(1, task.getIdProject);
-            statement.setString(2, task.getName);
-            statement.setString(3, task.getDescription);
-            statement.setBoolean(4, task.getIsDone);
-            statement.setString(5, task.getObservation);
+            statement.setInt(1, task.getIdProject());
+            statement.setString(2, task.getName());
+            statement.setString(3, task.getDescription());
+            statement.setBoolean(4, task.getIsDone());
+            statement.setString(5, task.getObservation());
             statement.setDate(6, new Date(task.getCreatedAt().getTime()));
             statement.setDate(7, new Date(task.getUpdatedAt().getTime()));
             statement.setDate(8, new Date(task.getDeadLine().getTime()));
             statement.execute();
-        } catch (Exception e) {
+        } catch (Exception ex) {
             throw new RuntimeException("Erro ao criar a tarefa." + ex.getMessage(), ex);
         }finally{
             ConnectionFactory.closeConnection(conn, statement);
@@ -60,15 +61,15 @@ public class TaskController {
         try {
             conn = ConnectionFactory.getConnection();
             statement = conn.prepareStatement(sql);
-            statement.setInt(1, task.getIdProject);
-            statement.setString(2, task.getName);
-            statement.setString(3, task.getDescription);
-            statement.setBoolean(4, task.getIsDone);
-            statement.setString(5, task.getObservation);
+            statement.setInt(1, task.getIdProject());
+            statement.setString(2, task.getName());
+            statement.setString(3, task.getDescription());
+            statement.setBoolean(4, task.getIsDone());
+            statement.setString(5, task.getObservation());
             statement.setDate(6, new Date(task.getCreatedAt().getTime()));
             statement.setDate(7, new Date(task.getUpdatedAt().getTime()));
             statement.setDate(8, new Date(task.getDeadLine().getTime()));
-            statement.setInt(9, task.getId);
+            statement.setInt(9, task.getId());
             statement.execute();
         } catch (Exception ex) {
             throw new RuntimeException("Erro ao alterar a tarefa." + ex.getMessage(), ex);
@@ -126,6 +127,6 @@ public class TaskController {
             ConnectionFactory.closeConnection(conn, statement, resultSet);
         }
 
-        return tasks
+        return tasks;
     }
 }

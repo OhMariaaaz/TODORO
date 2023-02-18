@@ -29,6 +29,7 @@ public class Task {
     public Task(){
         this.createdAt = new Date();
         this.updatedAt = new Date();
+        this.deadLine = new Date();
     }
 
     public void setId(int id){

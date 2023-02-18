@@ -17,5 +17,15 @@ public class Main {
         System.out.println(project.toString());
         projectController.save(project);
 
+        TaskController taskController = new TaskController();
+        Task task = new Task();
+
+        task.setName("First task");
+        task.setDescription("Testing controllers, methods and database");
+        task.setIsDone(false);
+        task.setIdProject(1);
+        System.out.println(task.toString());
+        taskController.save(task);
+
     }        
 }
