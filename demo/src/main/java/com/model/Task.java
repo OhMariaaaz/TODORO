@@ -105,6 +105,6 @@ public class Task {
     }
 
     public String toString(){
-        return "Project{" + "id=" + id + ", name=" + name + ", description=" + description + ", observation=" + observation + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + ", deadLine=" + deadLine + ", idProject" + idProject + "}";   
+        return "Task{" + "id=" + id + ", name=" + name + ", description=" + description + ", observation=" + observation + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + ", deadLine=" + deadLine + ", idProject" + idProject + "}";   
     }
 }
