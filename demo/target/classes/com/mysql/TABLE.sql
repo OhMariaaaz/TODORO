@@ -13,7 +13,7 @@ CREATE TABLE Tasks(
     descriptionv VARCHAR(90),
     isDone BOOLEAN NOT NULL,
     observation VARCHAR(90),
-    +9createdAt DATE,
+    createdAt DATE,
     updatedAt DATE,
     deadLine DATE,
     idProject INT NOT NULL,
